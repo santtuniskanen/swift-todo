@@ -10,35 +10,16 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(todos, id: \.self) { todo in
-                    NavigationLink(destination: TodoDetailView(todo: todo)) {
-                        HStack(alignment: .center) {
-                            VStack(alignment: .leading) {
-                                Text(todo.title)
-                                    .font(.title3)
-                                Text(formatDate(todo.date))
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                            }
-                            Spacer()
-                            StatusIndicator(status: todo.status)
-                        }
-                    }
+        TabView() {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
                 }
-            }
-            .listStyle(.inset)
-            .padding()
-            .navigationTitle("Todo List")
+            ListView()
+                .tabItem {
+                    Label("List", systemImage: "note")
+                }
         }
-    }
-
-    private func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter.string(from: date)
     }
 }
 
