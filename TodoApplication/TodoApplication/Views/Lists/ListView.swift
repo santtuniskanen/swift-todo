@@ -13,7 +13,7 @@ struct ListView: View {
             List {
                 ForEach(todos, id: \.self) { todo in
                     NavigationLink(destination: TodoDetailView(todo: todo)) {
-                        HStack(alignment: .top) {
+                        HStack(alignment: .center) {
                             VStack(alignment: .leading) {
                                 Text(todo.title)
                                     .font(.title3)
