@@ -30,7 +30,3 @@ struct TodoDetailView: View {
         return formatter.string(from: date)
     }
 }
-
-#Preview {
-    TodoDetailView()
-}

@@ -26,6 +26,3 @@ struct StatusIndicator: View {
     }
 }
 
-#Preview {
-    StatusIndicator()
-}
