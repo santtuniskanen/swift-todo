@@ -17,7 +17,7 @@ struct ContentView: View {
                 }
             ListView()
                 .tabItem {
-                    Label("List", systemImage: "note")
+                    Label("List", systemImage: "pencil.and.list.clipboard.rtl")
                 }
         }
     }
